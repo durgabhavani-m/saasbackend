@@ -59,7 +59,7 @@ const startServer = async () => {
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       try {
         await new Promise((resolve, reject) => {
-          const server = app.listen(port, () => {
+          const server = app.listen(port, "0.0.0.0", () => {
             console.log(`✅ Server running at: http://localhost:${port}`);
             resolve(server);
           });
