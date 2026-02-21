@@ -1,63 +1,6 @@
 
 
 
-// import express from "express";
-// import cors from "cors";
-// import dotenv from "dotenv";
-// import morgan from "morgan";
-
-// import { connectDB } from "./db.js";
-// import productRoutes from "./routes/productRoutes.js";
-// import salesRoutes from "./routes/salesRoutes.js";
-// import analyticsRoutes from "./routes/analyticsRoutes.js";
-// // Import the auth router (assuming it exists at './routes/auth.js')
-// import authRouter from './routes/auth.js';
-// import authRoutes from "./routes/authRoutes.js";
-// // import activityRouter from './routes/activity.js';
-
-// dotenv.config();
-// const app = express();
-
-// // CORS Configuration
-// // This allows your frontend (e.g., running on http://localhost:3000) to communicate with the backend.
-// // For production, you should restrict this to your frontend's actual domain.
-// const corsOptions = {
-//   origin: process.env.FRONTEND_URL || "http://localhost:3000",
-//   optionsSuccessStatus: 200,
-// };
-// app.use(cors(corsOptions));
-
-// // Middleware
-// app.use(express.json());
-// app.use(morgan("dev")); // Use morgan for HTTP request logging
-
-// // Routes
-// app.use("/api/products", productRoutes);
-// app.use("/api/sales", salesRoutes);
-// app.use("/api/analytics", analyticsRoutes);
-// app.use('/api/auth', authRouter);
-// // app.use('/api/activity', activityRouter);
-
-// // Health check route
-// app.get("/api/health", (req, res) => {
-//   res.json({ ok: true, message: "Backend is healthy", ts: Date.now() });
-// });
-
-// // Connect to the database and start the server
-// const startServer = async () => {
-//   try {
-//     await connectDB();
-//     const PORT = process.env.PORT || 5000;
-//     app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
-//   } catch (error) {
-//     console.error("Failed to start server:", error);
-//     process.exit(1);
-//   }
-// };
-
-// startServer();
-
-
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
