@@ -1,9 +1,14 @@
+# Render Blueprint - use this for correct deployment
+# Dashboard: New → Blueprint → Connect this repo to apply
 services:
   - type: web
     name: saasbackend
     runtime: node
     buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
+      - key: MONGO_URI
+        sync: false  # Add your Atlas connection string in Render Dashboard
