@@ -17,6 +17,15 @@ import billingRouter from "./src/routes/billing.js";
 
 dotenv.config();
 
+// Validate required env vars before starting (helps Render logs show the exact issue)
+const requiredEnv = ["MONGO_URI"];
+const missing = requiredEnv.filter((k) => !process.env[k]);
+if (missing.length) {
+  console.error("❌ Missing required env vars:", missing.join(", "));
+  console.error("   Add these in Render Dashboard → Environment");
+  process.exit(1);
+}
+
 const app = express();
 
 // 🌍 CORS - Allow frontend on Vercel + local dev (comma-separated origins)
